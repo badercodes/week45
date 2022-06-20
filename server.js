@@ -12,17 +12,17 @@ server.get("/", function (req, res) {
   res.send("<h1>Hello World!</h1>");
 });
 
-server.get("/about", function (req, res) {
-  res.send("<h1>  1- About Page </h1>");
+// testing post request
+server.post("/user", function (req, res) {
+  res.send("Recieved!");
 });
 
-server.get("/contact", function (req, res) {
-  res.send("<h1> 2- Contact Page</h1>");
-});
+// to automatically reload the server after code changes
+// istall this package: nodemon (node monitor)
+// only time nodemon won't trigger reboot of server is when installing
+// new package
 
-server.get("/products", function (req, res) {
-  res.send("<h1> 3- Products Page");
-});
+// also install cors & body-parser & express-form-data
 
 // listen to port on host
 server.listen(3011, function () {

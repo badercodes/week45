@@ -2,6 +2,9 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const db_url =
+  "mongodb+srv://admin01:123kdd123@cluster0.f96q4.mongodb.net/?retryWrites=true&w=majority";
 
 // calling the express funciton will return an object
 // with all of the methods for handling HTTP
@@ -16,6 +19,12 @@ const server = express();
 const bodyParserConfig = { extended: false };
 server.use(bodyParser.urlencoded(bodyParserConfig));
 server.use(bodyParser.json());
+
+// connect to MongoDB via Moongoose
+const db_config = { useNewUrlParsee: true, useUnifiedTopology: true };
+mongoose.connect(db_url, db_config).then(function () {
+  console.log("DB is connected");
+});
 
 // create routes
 server.get("/", function (req, res) {

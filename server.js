@@ -1,11 +1,21 @@
 // import the libraries
 
 const express = require("express");
+const bodyParser = require("body-parser");
 
 // calling the express funciton will return an object
 // with all of the methods for handling HTTP
 
 const server = express();
+
+// MongoDB Connection String
+//  mongodb+srv://admin01:<password>@cluster0.f96q4.mongodb.net/?retryWrites=true&w=majority
+
+// configure express so we can acces "body" during POST request
+// "use" method tells express what package to use so these are extra pckgs
+const bodyParserConfig = { extended: false };
+server.use(bodyParser.urlencoded(bodyParserConfig));
+server.use(bodyParser.json());
 
 // create routes
 server.get("/", function (req, res) {
@@ -14,7 +24,7 @@ server.get("/", function (req, res) {
 
 // testing post request
 server.post("/user", function (req, res) {
-  res.send("Recieved!");
+  res.send(req.body.firstname);
 });
 
 // to automatically reload the server after code changes

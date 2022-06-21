@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const server = express();
 
 // MongoDB Connection String
-//  mongodb+srv://admin01:<password>@cluster0.f96q4.mongodb.net/?retryWrites=true&w=majority
+//  mongodb+srv://admin01:123kdd123@cluster0.f96q4.mongodb.net/?retryWrites=true&w=majority
 
 // configure express so we can acces "body" during POST request
 // "use" method tells express what package to use so these are extra pckgs

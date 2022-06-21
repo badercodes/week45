@@ -7,7 +7,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const db_url =
-  "mongodb+srv://admin01:db12345@cluster0.oikl7.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://admin01:123kdd123@cluster0.f96q4.mongodb.net/?retryWrites=true&w=majority";
+
 const cors = require("cors");
 const UserModel = require("./models/UserModel.js");
 const userRoutes = require("./routes/user-routes.js");

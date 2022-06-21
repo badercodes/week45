@@ -21,10 +21,16 @@ server.use(bodyParser.urlencoded(bodyParserConfig));
 server.use(bodyParser.json());
 
 // connect to MongoDB via Moongoose
-const db_config = { useNewUrlParsee: true, useUnifiedTopology: true };
-mongoose.connect(db_url, db_config).then(function () {
-  console.log("DB is connected");
-});
+// config setting from documenation
+const db_config = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose
+  .connect(db_url, db_config)
+  .then(function () {
+    console.log("DB is connected");
+  })
+  .catch(function (dbError) {
+    console.log(dbError);
+  });
 
 // create routes
 server.get("/", function (req, res) {
